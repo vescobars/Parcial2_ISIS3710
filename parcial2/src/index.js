@@ -9,14 +9,23 @@ import localeEnMessages from "./locales/en.json";
 import localeEsMessages from "./locales/es.json";
 import {IntlProvider} from "react-intl";
 
+const rawLocale = (navigator.userLanguage || navigator.language || navigator.browserLanguage).toLowerCase();
+let locale;
 
+if (rawLocale.startsWith("es")) {
+  locale = "es";
+} else {
+  locale = "en";
+}
 
 const messages = locale.startsWith("es") ? localeEsMessages : localeEnMessages;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <IntlProvider locale={locale} messages={messages} >
+        <App />
+    </IntlProvider>
   </React.StrictMode>
 );
 
