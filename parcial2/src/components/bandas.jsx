@@ -22,6 +22,7 @@ const Bandas = ({bandas,setSelectedBand}) => {
         setSelectedBand(band);
     }
 
+
     return(
         <div className='col-md-6'>
             <div className='row'>
@@ -57,13 +58,25 @@ const Bandas = ({bandas,setSelectedBand}) => {
                     <FormattedMessage id="oldest-foundation"></FormattedMessage>
                 </p>
             </div>
-            <div className='col-md-6'>
-                <p>
-                    <FormattedMessage id="oldest-band"></FormattedMessage>
-                    <span>{oldestBand.name}</span>
-                    <FormattedMessage id="oldest-foundation"></FormattedMessage>
-                </p>
+            <div className='card-group'>
+            {
+                <div className='card-group'>
+                {
+                    selectedBand && 
+                            bands.map(band => {
+                                <div className='card' onClick={handleClick(band)}>
+                                    <div className='card-body'>
+                                        <img src="/house-icon.png" alt="House Icon" />
+                                        <h5 className='card-title'>{band.name}</h5>
+                                        <p className='card-text'>{band.description}</p>
+                                    </div>
+                                </div>
+                            }
+                    )
+                }
             </div>
+            }
+        </div>
         </div>
     );
 }
