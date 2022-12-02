@@ -13,6 +13,7 @@ const Bandas = ({bandas,selectedBand}) => {
         }
     );
     
+    
     var oldestBand = Math.min.apply( null, bandFoundationYear );
 
     return(
