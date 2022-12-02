@@ -60,6 +60,7 @@ const Bandas = ({bandas,setSelectedBand}) => {
             </div>
             <div className='card-group'>
             {
+                
                 <div className='card-group'>
                 {
                     selectedBand && 
