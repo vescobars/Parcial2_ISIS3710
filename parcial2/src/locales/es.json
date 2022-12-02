@@ -2,5 +2,8 @@
     "BandName": "Nombre",
     "Country" : "País",
     "Genre" : "Género",
-    "Foundation" : "Fundación"
+    "Foundation" : "Fundación",
+    "oldest-band": "La banda más antigua es ",
+    "oldest-foundation": " y fue fundada hace ",
+    "Years": " años"
 }

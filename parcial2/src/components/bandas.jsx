@@ -13,7 +13,7 @@ const Bandas = ({bandas,selectedBand}) => {
         }
     );
     
-    
+
     var oldestBand = Math.min.apply( null, bandFoundationYear );
 
     return(
@@ -42,13 +42,16 @@ const Bandas = ({bandas,selectedBand}) => {
                     </tbody>
                 </table>
             }
-
-            <div>
-                {
+            <p>
+                <FormattedMessage id="oldest-band"></FormattedMessage>
+                <span>{oldestBand.name}</span>
+                <FormattedMessage id="oldest-foundation"></FormattedMessage>
+            </p>
                     
-                }
-            </div>
+            
         </div>
+
+        
     );
 }
 
