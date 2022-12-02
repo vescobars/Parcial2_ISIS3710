@@ -18,40 +18,40 @@ const Bandas = ({bandas,selectedBand}) => {
 
     return(
         <div className='col-md-6'>
-            {
-                <table className='table table-stripped'>
-                    <thead>
-                        <th>#</th>
-                        <th><FormattedMessage id="BandName"></FormattedMessage></th>
-                        <th><FormattedMessage id="Country"></FormattedMessage></th>
-                        <th><FormattedMessage id="Genre"></FormattedMessage></th>
-                        <th><FormattedMessage id="Foundation"></FormattedMessage></th>
-                    </thead>
-                    <tbody>
-                        {
-                            bandas.map((banda) => {
-                                        <tr>
-                                            <td>{banda.id}</td>
-                                            <td>{banda.name}</td>
-                                            <td>{banda.country}</td>
-                                            <td>{banda.genre}</td>
-                                            <td>{banda.foundation_year}</td>
-                                        </tr>
-                            })
-                        }
-                    </tbody>
-                </table>
-            }
-            <p>
-                <FormattedMessage id="oldest-band"></FormattedMessage>
-                <span>{oldestBand.name}</span>
-                <FormattedMessage id="oldest-foundation"></FormattedMessage>
-            </p>
-                    
-            
+            <div className='row'>
+                {
+                    <table className='table table-stripped'>
+                        <thead>
+                            <th>#</th>
+                            <th><FormattedMessage id="BandName"></FormattedMessage></th>
+                            <th><FormattedMessage id="Country"></FormattedMessage></th>
+                            <th><FormattedMessage id="Genre"></FormattedMessage></th>
+                            <th><FormattedMessage id="Foundation"></FormattedMessage></th>
+                        </thead>
+                        <tbody>
+                            {
+                                bandas.map((banda) => {
+                                            <tr>
+                                                <td>{banda.id}</td>
+                                                <td>{banda.name}</td>
+                                                <td>{banda.country}</td>
+                                                <td>{banda.genre}</td>
+                                                <td>{banda.foundation_year}</td>
+                                            </tr>
+                                })
+                            }
+                        </tbody>
+                    </table>
+                }
+            </div>
+            <div className='row'>
+                <p>
+                    <FormattedMessage id="oldest-band"></FormattedMessage>
+                    <span>{oldestBand.name}</span>
+                    <FormattedMessage id="oldest-foundation"></FormattedMessage>
+                </p>
+            </div>
         </div>
-
-        
     );
 }
 
