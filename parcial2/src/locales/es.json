@@ -1,6 +1,6 @@
 {
-    "BandName": "",
-    "Country" : "",
-    "Genre" : "",
-    "Foundation" : ""
+    "BandName": "Nombre",
+    "Country" : "País",
+    "Genre" : "Género",
+    "Foundation" : "Fundación"
 }

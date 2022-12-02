@@ -6,6 +6,15 @@ const Bandas = ({bandas,selectedBand}) => {
     //Banda actualmente seleccionada
     const band = bandas.filter((banda)=>banda.id === selectedBand);
 
+    //Se encarga de encontrar el minimo
+    let bandFoundationYear  = bandas.map(
+        function(bandas) {
+        return bandas.foundation_year;
+        }
+    );
+    
+    var oldestBand = Math.min.apply( null, bandFoundationYear );
+
     return(
         <div className='col-md-6'>
             {
@@ -25,13 +34,19 @@ const Bandas = ({bandas,selectedBand}) => {
                                             <td>{banda.name}</td>
                                             <td>{banda.country}</td>
                                             <td>{banda.genre}</td>
-                                            <td>{banda.foundation}</td>
+                                            <td>{banda.foundation_year}</td>
                                         </tr>
                             })
                         }
                     </tbody>
                 </table>
             }
+
+            <div>
+                {
+                    
+                }
+            </div>
         </div>
     );
 }
