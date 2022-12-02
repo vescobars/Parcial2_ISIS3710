@@ -1,6 +1,5 @@
 import React from 'react';
-import useState from 'react';
-import FormattedMessage from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 const Bandas = ({bandas,selectedBand}) => {
     
@@ -20,8 +19,7 @@ const Bandas = ({bandas,selectedBand}) => {
                     </thead>
                     <tbody>
                         {
-                            bandas.map(
-                                (banda) => {
+                            bandas.map((banda) => {
                                         <tr>
                                             <td>{banda.id}</td>
                                             <td>{banda.name}</td>
@@ -29,8 +27,7 @@ const Bandas = ({bandas,selectedBand}) => {
                                             <td>{banda.genre}</td>
                                             <td>{banda.foundation}</td>
                                         </tr>
-                                }
-                            )
+                            })
                         }
                     </tbody>
                 </table>
@@ -38,3 +35,5 @@ const Bandas = ({bandas,selectedBand}) => {
         </div>
     );
 }
+
+export default Bandas;
