@@ -1,20 +1,26 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
+import {useState} from 'react';
 
-const Bandas = ({bandas,selectedBand}) => {
+const Bandas = ({bandas,setSelectedBand}) => {
     
     //Banda actualmente seleccionada
-    const band = bandas.filter((banda)=>banda.id === selectedBand);
+    const [selectedBand] = useState(null);
+    const band = bandas.filter((banda)=>banda.id === selectedBand.id);
 
     //Se encarga de encontrar el minimo
     let bandFoundationYear  = bandas.map(
         function(bandas) {
-        return bandas.foundation_year;
+            return bandas.foundation_year;
         }
     );
     
 
     var oldestBand = Math.min.apply( null, bandFoundationYear );
+
+    const handleClick = (band) => {
+        setSelectedBand(band);
+    }
 
     return(
         <div className='col-md-6'>
@@ -31,7 +37,7 @@ const Bandas = ({bandas,selectedBand}) => {
                         <tbody>
                             {
                                 bandas.map((banda) => {
-                                            <tr>
+                                            <tr onClick={setSelectedBand(band)}>
                                                 <td>{banda.id}</td>
                                                 <td>{banda.name}</td>
                                                 <td>{banda.country}</td>
@@ -45,6 +51,13 @@ const Bandas = ({bandas,selectedBand}) => {
                 }
             </div>
             <div className='row'>
+                <p>
+                    <FormattedMessage id="oldest-band"></FormattedMessage>
+                    <span>{oldestBand.name}</span>
+                    <FormattedMessage id="oldest-foundation"></FormattedMessage>
+                </p>
+            </div>
+            <div className='col-md-6'>
                 <p>
                     <FormattedMessage id="oldest-band"></FormattedMessage>
                     <span>{oldestBand.name}</span>
